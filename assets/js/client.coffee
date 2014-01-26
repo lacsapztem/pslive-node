@@ -61,7 +61,6 @@ $(document).ready ->
     $('#message-to-send').focus()
 
   socket.on 'nwmsg', (message) ->
-    
     flag_scrollauto=$('#messages').prop('scrollHeight')<=($('#main').prop('scrollTop')+$('#main').height())
     if last_msg_id != message.user.id
       $('#messages').append(Mustache.render(msg_template,message))
